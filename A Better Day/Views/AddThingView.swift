@@ -29,7 +29,8 @@ struct AddThingView: View {
                 dismiss()
             }
             .buttonStyle(.borderedProminent)
-            .disabled(thingTitle.isEmpty)
+            .disabled(thingTitle
+                .trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
         }
         .padding()
     }

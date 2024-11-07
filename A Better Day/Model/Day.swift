@@ -19,3 +19,18 @@ class Day: Identifiable {
         
     }
 }
+
+
+
+extension Day {
+    static func currentDayPredicate() -> Predicate<Day> {
+    
+        let calendar = Calendar.autoupdatingCurrent
+        let start = calendar.startOfDay(for: Date.now)
+        
+        return #Predicate<Day> {
+            $0.date >= start
+        }
+    
+    }
+}
